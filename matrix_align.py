@@ -122,8 +122,8 @@ def similarity(x, y, yb, threshold=0.5, sim_raw_thr=0,
             w[i[s]] = d[i[s],j[s]] - d[i[s]-1, j[s]-1] * u[s] * v[s]
             i = i - q.int() - s.int()
             j = j - r.int() - s.int()
-			# keep the indices if:
-			# - we have not crossed a poem boundary (the current i is not the
+            # keep the indices if:
+            # - we have not crossed a poem boundary (the current i is not the
             #   last row of a poem OR we came from the right)
             # - both i and j are > 0
             keep = (torch.isin(i, yb[1:]-1, assume_unique=True, invert=True) + r) \
