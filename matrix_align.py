@@ -215,7 +215,7 @@ def setup_logging(logfile, level):
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
-        description='TODO DESCRIPTION.')
+        description='Align large collections of versified poetry.')
     parser.add_argument(
         '-a', '--alignments-file', type=str, default=None,
         help='File to write verse-level alignments to.')
