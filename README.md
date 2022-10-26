@@ -54,8 +54,9 @@ python3 matrix_align.py \
   -L INFO -p -T
 ```
 
-This will create two files. `example_output.csv` contains pairs of
-similar poems, with following columns:
+The computation should take around 5 minutes and will create two output
+files. `example_output.csv` contains pairs of similar poems, with the
+following columns:
 * `p1_id`, `p2_id` -- poem IDs
 * `sim_raw` -- raw similarity, i.e. the sum of cosine similarities of aligned verses,
 * `sim_l`, `sim_r` -- left-/right-normalized similarity (the raw similarity divided by the length of the left/right poem)
@@ -72,3 +73,9 @@ the following format:
 Note that the alignments file is only produced if the `-a` parameter is
 set, and that without it the computation is faster as the alignments do
 not need to be extracted.
+
+### Scalability
+
+In practice, the script can be used on much larger collections, such as
+[Suomen Kansan Vanhat Runot](https://skvr.fi/) ([Github](https://github.com/sks190/SKVR))
+or [Eesti Regilaulude Andmebaas](https://www.folklore.ee/regilaul/andmebaas/).
