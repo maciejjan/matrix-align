@@ -79,3 +79,20 @@ not need to be extracted.
 In practice, the script can be used on much larger collections, such as
 [Suomen Kansan Vanhat Runot](https://skvr.fi/) ([Github](https://github.com/sks190/SKVR))
 or [Eesti Regilaulude Andmebaas](https://www.folklore.ee/regilaul/andmebaas/).
+
+## BERT example
+
+The core of the script is the function `similarity(x, y, yb)` which conducts
+the optimized alignment on embedding matrices `x` and `y`, where `yb`
+is a vector of document boundaries in the matrix `y`. This algorithm
+can be applied regardless of which vectorization method was used to obtain
+the embeddings (provided that the vectors are normalized to unit length,
+so that cosine similarity amounts to a dot product).
+
+The file `bert_demo.py` contains a toy example illustrating how to use
+the alignment method on vectors obtained from BERT (using the HuggingFace
+`transformers` library). The alignment captures similar phrases, e.g.
+`quick brown fox ~ swift red squirrel`.
+
+A more realistic example illustrating the benefit of large-scale alignment
+based on BERT embeddings is subject for further work.
